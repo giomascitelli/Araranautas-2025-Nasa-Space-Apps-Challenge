@@ -1,6 +1,11 @@
 # ARARANAUTAS
 Space Habitat Layout Creator and Management Game
 
+## Unity
+Estamos usando a versão 2022.3.26f1 do Unity para a criação do jogo.
+
+Caso não tenha baixado essa versão ainda, você pode encontrar ela nesse link: https://unity.com/releases/editor/archive
+
 ## Branches
 ```main``` → Branch estável. Sempre contém o código testado e pronto para ser entregue ou demonstrado.
 
