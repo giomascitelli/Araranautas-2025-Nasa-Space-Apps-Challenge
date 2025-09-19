@@ -12,13 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca187a086d1d09408d340d5845f9581, type: 3}
   m_Name: Mothership
   m_EditorClassIdentifier: 
-  structureName: 
-  description: 
-  frontSprite: {fileID: 0}
-  type1: 0
+  structureName: The Mothership
+  description: You and your crew got here thanks to this ship, but you must expand
+    quickly if you want to survive and live here.
+  frontSprite: {fileID: 21300000, guid: bc4c3a723fea45b449f6c4f711b0db74, type: 3}
+  type1: 11
   type2: 0
-  resourceStats: []
-  populationCapacity: 0
+  resourceStats:
+  - type: 0
+    amount: 1
+  - type: 1
+    amount: 1
+  - type: 2
+    amount: 1
+  - type: 3
+    amount: 1
+  populationCapacity: 10
   buildCost: []
   requiresDome: 0
   unlocksHousing: 0
