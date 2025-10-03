@@ -1,26 +1,29 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingPreview : MonoBehaviour
 {
-    public enum BuildingPreviewState
-    {
-        POSITIVE,
-        NEGATIVE
-    }
+    public enum BuildingPreviewState { POSITIVE, NEGATIVE }
 
     [SerializeField] private Material positiveMaterial;
     [SerializeField] private Material negativeMaterial;
+
     public BuildingPreviewState State { get; private set; } = BuildingPreviewState.NEGATIVE;
     public BuildingData Data { get; private set; }
-    public BuildingModel BuildingModel {get; private set; }
+    public BuildingModel BuildingModel { get; private set; }
+
+    // Se este preview veio de um building existente, setamos esta referência
+    public Building SourceBuilding { get; private set; }
+
     private List<Renderer> renderers = new();
     private List<Collider> colliders = new();
-    
-    public void Setup(BuildingData data)
+
+    // Setup normal ou com sourceBuilding (movimento)
+    public void Setup(BuildingData data, Building sourceBuilding = null)
     {
         Data = data;
+        SourceBuilding = sourceBuilding;
+
         BuildingModel = Instantiate(data.Model, transform.position, Quaternion.identity, transform);
         renderers.AddRange(BuildingModel.GetComponentsInChildren<Renderer>());
         colliders.AddRange(BuildingModel.GetComponentsInChildren<Collider>());
@@ -29,6 +32,7 @@ public class BuildingPreview : MonoBehaviour
         {
             col.enabled = false;
         }
+
         SetPreviewMaterial(State);
     }
 
@@ -51,9 +55,7 @@ public class BuildingPreview : MonoBehaviour
         {
             Material[] mats = new Material[rend.sharedMaterials.Length];
             for (int i = 0; i < mats.Length; i++)
-            {
                 mats[i] = previewMat;
-            }
             rend.materials = mats;
         }
     }
