@@ -187,6 +187,17 @@ public class ColonyManager : MonoBehaviour
         };
     }
 
+    public void AddMaterial(ResourceType type, int amount)
+    {
+        switch (type)
+        {
+            case ResourceType.Rocks: currentRocks += amount; break;
+            case ResourceType.Metal: currentMetal += amount; break;
+            case ResourceType.Crystals: currentCrystals += amount; break;
+        }
+        UpdateUI();
+    }
+
     public void UnregisterBuilding(Building building)
     {
         if (buildings.Contains(building))
