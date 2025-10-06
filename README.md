@@ -2,6 +2,8 @@
 
 Space Habitat Layout Creator and Management Game
 
+https://github.com/user-attachments/assets/353711ba-36de-4dde-9d26-cf49c74a8b91
+
 ## Credits / Créditos
 
 All the artwork for this project was created by my great friend and cousin, **Vinicius Moura**
