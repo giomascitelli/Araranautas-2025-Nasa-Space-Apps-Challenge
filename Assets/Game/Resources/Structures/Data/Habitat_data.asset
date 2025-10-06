@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffde26c54bcdccc4095fb43b260d40aa, type: 3}
+  m_Name: Habitat_data
+  m_EditorClassIdentifier: 
+  <BuildingName>k__BackingField: Habitat_data
+  <Description>k__BackingField: 
+  <Model>k__BackingField: {fileID: 7812093434242259380, guid: c31d5763cdc5b2b498ebd9777810f2cc, type: 3}
+  <BuildCost>k__BackingField: []
+  <ResourceStats>k__BackingField:
+  - type: 0
+    amountPerHour: 6
+  - type: 3
+    amountPerHour: 3
+  - type: 1
+    amountPerHour: 2
