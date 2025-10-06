@@ -2,7 +2,7 @@
 
 Space Habitat Layout Creator and Management Game
 
-https://github.com/user-attachments/assets/353711ba-36de-4dde-9d26-cf49c74a8b91
+https://github.com/user-attachments/assets/1b2f730e-66d5-46cf-bab4-0b6ce0d92499
 
 ## Credits / Créditos
 
