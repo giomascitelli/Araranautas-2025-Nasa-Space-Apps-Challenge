@@ -1,4 +1,5 @@
-# ARARANAUTAS
+<img width="512" height="231" alt="Araranauts_logo_1" src="https://github.com/user-attachments/assets/3e4e2aa2-a0a3-43ab-aa6f-1834048ed93e" />
+
 Space Habitat Layout Creator and Management Game
 
 ## Unity
