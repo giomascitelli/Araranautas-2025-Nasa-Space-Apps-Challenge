@@ -2,6 +2,12 @@
 
 Space Habitat Layout Creator and Management Game
 
+## Credits / Créditos
+
+All the artwork for this project was created by my great friend and cousin, **Vinicius Moura**
+
+Todas as artes deste projeto foram feitas pelo meu grande amigo e primo, **Vinicius Moura**
+
 ## Unity
 Estamos usando a versão 2022.3.26f1 do Unity para a criação do jogo.
 
