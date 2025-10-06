@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffde26c54bcdccc4095fb43b260d40aa, type: 3}
-  m_Name: WaterGen_data
+  m_Name: Power_data
   m_EditorClassIdentifier: 
-  <BuildingName>k__BackingField: Water Generator
+  <BuildingName>k__BackingField: Power_data
   <Description>k__BackingField: 
-  <Model>k__BackingField: {fileID: 7812093434242259380, guid: 365ffab904a6cf94e84cc58618249b0a, type: 3}
-  <BuildCost>k__BackingField:
-  - type: 5
-    amount: 50
-  - type: 6
-    amount: 20
+  <Model>k__BackingField: {fileID: 7812093434242259380, guid: a1bcfa2559e24464e9f68af442d286a2, type: 3}
+  <BuildCost>k__BackingField: []
   <ResourceStats>k__BackingField:
-  - type: 2
-    amountPerHour: 5
   - type: 0
-    amountPerHour: -3
+    amountPerHour: 10
+  - type: 1
+    amountPerHour: 2

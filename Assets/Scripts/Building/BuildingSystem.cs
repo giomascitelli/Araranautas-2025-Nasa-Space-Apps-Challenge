@@ -14,10 +14,12 @@ public class BuildingSystem : MonoBehaviour
     [SerializeField] private BuildingGrid grid;
     [SerializeField] private ColonyManager colonyManager;
     private BuildingPreview preview;
+    private Vector3 mouse;
 
     private void Update()
     {
         Vector3 mousePos = GetMouseWorldPosition();
+        mouse = mousePos;
 
         if (preview != null)
         {
@@ -28,7 +30,7 @@ public class BuildingSystem : MonoBehaviour
                 // cancelar preview; se preview tinha SourceBuilding, restauramos a building no grid
                 if (preview.SourceBuilding != null)
                 {
-                    // restaura posições originais no grid e visual
+                    // restaura posiï¿½ï¿½es originais no grid e visual
                     var original = preview.SourceBuilding.GetOriginalPositions();
                     grid.SetBuilding(preview.SourceBuilding, original);
                     preview.SourceBuilding.CancelMoveRestore();
@@ -40,16 +42,16 @@ public class BuildingSystem : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-                preview = CreatePreview(buildingData1, mousePos);
+            // if (Input.GetKeyDown(KeyCode.Alpha1))
+            //     preview = CreatePreview(buildingData1, mousePos);
 
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-                preview = CreatePreview(buildingData2, mousePos);
+            // if (Input.GetKeyDown(KeyCode.Alpha2))
+            //     preview = CreatePreview(buildingData2, mousePos);
 
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-                preview = CreatePreview(buildingData3, mousePos);
+            // if (Input.GetKeyDown(KeyCode.Alpha3))
+            //     preview = CreatePreview(buildingData3, mousePos);
 
-            // clique direito para iniciar mover através do grid
+            // clique direito para iniciar mover atravï¿½s do grid
             if (Input.GetMouseButtonDown(1))
                 TryStartMove(mousePos);
 
@@ -57,6 +59,11 @@ public class BuildingSystem : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Delete))
                 TryDeleteAt(mousePos);
         }
+    }
+
+    public void BuildingPlacement(BuildingData data)
+    {
+        preview = CreatePreview(data, mouse);
     }
 
     private void HandlePreview(Vector3 mouseWorldPosition)
@@ -89,18 +96,18 @@ public class BuildingSystem : MonoBehaviour
         // Se estamos movendo uma building existente (preview.SourceBuilding != null)
         if (preview.SourceBuilding != null)
         {
-            // confirmar movimento: posiciona a building original nas novas posições
+            // confirmar movimento: posiciona a building original nas novas posiï¿½ï¿½es
             preview.SourceBuilding.FinishMove(buildingPositions, preview.transform.position);
             grid.SetBuilding(preview.SourceBuilding, buildingPositions);
 
-            // NÃO registrar novamente na colonyManager — stats permanecem os mesmos
+            // Nï¿½O registrar novamente na colonyManager ï¿½ stats permanecem os mesmos
 
             Destroy(preview.gameObject);
             preview = null;
             return;
         }
 
-        // Caso normal de construir novo prédio
+        // Caso normal de construir novo prï¿½dio
         if (colonyManager != null && preview != null)
         {
             BuildingData buildingData = preview.Data;
@@ -134,10 +141,10 @@ public class BuildingSystem : MonoBehaviour
 
         if (target == null) return;
 
-        // 1) guarda posições originais dentro do building (BeginMove faz isso + esconde visual)
+        // 1) guarda posiï¿½ï¿½es originais dentro do building (BeginMove faz isso + esconde visual)
         target.BeginMove();
 
-        // 2) limpa o grid (libera células)
+        // 2) limpa o grid (libera cï¿½lulas)
         grid.ClearBuilding(target.GetOriginalPositions());
 
         // 3) cria preview vinculado ao building de origem
